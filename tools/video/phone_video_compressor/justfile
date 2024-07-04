@@ -1,0 +1,21 @@
+set shell := ["zsh", "-cu"]
+
+default:
+  just --list
+
+venv: 
+  python -m venv .venv
+  # Use uv package to pip install.
+  # Ref: https://github.com/astral-sh/uv?tab=readme-ov-file#highlights
+  source .venv/bin/activate \
+    && pip install uv \
+    && uv pip install -r requirements.txt
+
+compress-video path_to_vid:
+  @docker build -t swissarmyknife_video_compression .
+  @video_path=$(realpath -- "$(dirname -- {{path_to_vid}})") \
+  && video_filename=$(basename -- {{path_to_vid}}) \
+  && echo "* Video Path: $video_path" \
+  && echo "* Video File: $video_filename" \
+  && docker run -v $video_path:/app/videos swissarmyknife_video_compression /bin/sh -c "python /app/compressor.py /app/videos/$video_filename" \
+  && docker rmi -f swissarmyknife_video_compression
