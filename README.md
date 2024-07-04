@@ -13,7 +13,6 @@ Most of these will be contained to a single folder.  The README in that folder w
 ---
 
 - :white_check_mark: video :: phone_video_compressor
-- :white_check_mark: credential_mgmt :: sops
 
 ## Making a New Toy
 
