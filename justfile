@@ -1,10 +1,10 @@
 set shell := ["zsh", "-cu"]
 
 default:
-    just toys
+    just --list
 
 tools:
-    du -d 3 | sed -nE 's/.\/toys\/(.*)\/(.*)/\1 \2/p' | awk '{ print $2 " :: "  $3}' | sort
+    du -d 3 | sed -nE 's/.\/tools\/(.*)\/(.*)/\1 \2/p' | awk '{ print $2 " :: "  $3}' | sort
 
 generate name:
     @echo 'Generating ./{{name}} folder...'
