@@ -19,7 +19,7 @@ venv:
   source .venv/bin/activate \
     && pip install uv \
     && uv pip install -r requirements.txt \
-    && uv pip install -r requirements-dev.txt
+    && python -m spacy download en_core_web_sm
 
 test:
   python -m pytest --doctest-modules ./tests
