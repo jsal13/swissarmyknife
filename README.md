@@ -13,6 +13,7 @@ Most of these will be contained to a single folder.  The README in that folder w
 ---
 
 - :white_check_mark: video :: phone_video_compressor
+- :white_check_mark: writing :: copyedit_analysis
 
 ## Making a New Toy
 
