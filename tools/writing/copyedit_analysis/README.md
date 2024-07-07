@@ -2,42 +2,36 @@
 
 ## Last Updated
 
-2024-06-27
+2024-07-06
 
 ## Status
 
-**Not Working.**
-
-If not working:
-
-- [ ] Error
-
-- [ ] In progress
+**Working.**
 
 ## Description
 
-What is this tool?
-
-```mermaid
-graph LR;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-
-```
+Given a User Input (text), generates a words-per-sentence graph as well as statistics on sentence length.  Compares to some other (famous) writers.
 
 ## Quickstart
 
-How do I run this?
+If you have `just`:
 
-## Credentials
+    ```shell
+    # To start up the docker container...
+    just up
 
-|          |            |
-| -------- | ---------- |
-| User     | `user`     |
-| Password | `password` |
+    # When you're done...
+    just down
+    ```
 
-## Notes
+Otherwise you can use docker compose commands:
 
-## Resources
+    ```shell
+    # To start up the docker container...
+    docker compose up --remove-orphans -w
+
+    # When you're done...
+    docker compose down --remove-orphans --volumes
+    ```
+
+To open the application go to <localhost:8501>.
